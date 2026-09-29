@@ -14,27 +14,34 @@
     />
     <link rel="stylesheet" href="gate.css" />
   </head>
-  <body>
+  <body data-page="gate">
     <main class="gate">
       <section class="window" aria-labelledby="gate-title">
-        <p class="brand">NeonShine</p>
-        <h1 id="gate-title">Выберите вариант сайта</h1>
-        <p class="lead">Три варианта с одним прайсом и записью в WhatsApp.</p>
+        <div class="window__top">
+          <p class="brand">NeonShine</p>
+          <div class="lang" role="group" data-i18n-aria="lang.label" aria-label="Язык">
+            <button type="button" data-set-lang="ru">RU</button>
+            <button type="button" data-set-lang="en">EN</button>
+          </div>
+        </div>
+        <h1 id="gate-title" data-i18n="gate.title">Выберите вариант сайта</h1>
+        <p class="lead" data-i18n="gate.lead">Три варианта с одним прайсом и записью в WhatsApp.</p>
         <div class="choices">
           <a class="choice" href="variant-1.html">
-            <span class="choice__name">1 вариант</span>
-            <span class="choice__note">Карточки, скруглённые кнопки</span>
+            <span class="choice__name" data-i18n="switch.1">1 вариант</span>
+            <span class="choice__note" data-i18n="choice.1">Карточки, скруглённые кнопки</span>
           </a>
           <a class="choice choice--alt" href="variant-2.html">
-            <span class="choice__name">2 вариант</span>
-            <span class="choice__note">Строгий список и рамка</span>
+            <span class="choice__name" data-i18n="switch.2">2 вариант</span>
+            <span class="choice__note" data-i18n="choice.2">Строгий список и рамка</span>
           </a>
           <a class="choice choice--red" href="variant-3.html">
-            <span class="choice__name">3 вариант</span>
-            <span class="choice__note">Красный спортивный стиль</span>
+            <span class="choice__name" data-i18n="switch.3">3 вариант</span>
+            <span class="choice__note" data-i18n="choice.3">Красный спортивный стиль</span>
           </a>
         </div>
       </section>
     </main>
+    <script src="i18n.js"></script>
   </body>
 </html>

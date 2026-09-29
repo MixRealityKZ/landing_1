@@ -85,12 +85,14 @@ img {
   align-items: center;
   justify-content: center;
   min-height: 36px;
+  padding: 0 8px;
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .switch a[aria-current="page"] {
@@ -117,6 +119,36 @@ img {
   background: linear-gradient(135deg, var(--blue), var(--violet));
   box-shadow: 0 0 10px var(--blue);
   vertical-align: 1px;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang {
+  display: flex;
+  gap: 6px;
+}
+
+.lang button {
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lang button[aria-pressed="true"] {
+  border-color: rgba(122, 108, 255, 0.75);
+  background: rgba(122, 108, 255, 0.28);
+  color: #fff;
 }
 
 .header__phone {
@@ -189,7 +221,8 @@ h1 {
 .instagram:focus-visible,
 .footer a:focus-visible,
 .logo:focus-visible,
-.switch a:focus-visible {
+.switch a:focus-visible,
+.lang button:focus-visible {
   outline: 2px solid var(--blue);
   outline-offset: 3px;
 }

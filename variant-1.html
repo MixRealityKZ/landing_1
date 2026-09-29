@@ -18,28 +18,37 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body
+    data-page="v1"
     data-phone="77001234567"
     data-phone-label="+7 700 123-45-67"
     data-instagram="https://instagram.com/neonshine"
   >
     <header class="header">
       <a class="logo" href="index.html">NeonShine</a>
-      <nav class="switch" aria-label="Варианты оформления">
-        <a href="variant-1.html" aria-current="page">1 вариант</a>
-        <a href="variant-2.html">2 вариант</a>
-        <a href="variant-3.html">3 вариант</a>
+      <nav class="switch" data-i18n-aria="nav.label" aria-label="Варианты оформления">
+        <a href="variant-1.html" aria-current="page" data-i18n="switch.1">1 вариант</a>
+        <a href="variant-2.html" data-i18n="switch.2">2 вариант</a>
+        <a href="variant-3.html" data-i18n="switch.3">3 вариант</a>
       </nav>
-      <a class="header__phone" data-tel href="tel:+77001234567">Позвонить</a>
+      <div class="header__actions">
+        <div class="lang" role="group" data-i18n-aria="lang.label" aria-label="Язык">
+          <button type="button" data-set-lang="ru">RU</button>
+          <button type="button" data-set-lang="en">EN</button>
+        </div>
+        <a class="header__phone" data-tel data-i18n="call" href="tel:+77001234567">Позвонить</a>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero__content">
-          <p class="eyebrow">Студия детейлинга · Астана</p>
-          <h1>Премиальный детейлинг и уход за вашим авто</h1>
-          <p class="hero__lead">Вернем вашей машине состояние новой за 24 часа.</p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">Студия детейлинга · Астана</p>
+          <h1 data-i18n="hero.title">Премиальный детейлинг и уход за вашим авто</h1>
+          <p class="hero__lead" data-i18n="hero.lead">Вернем вашей машине состояние новой за 24 часа.</p>
           <a
             class="btn btn--primary"
+            data-i18n="hero.cta"
+            data-wa-key="wa.inspect"
             data-wa="Здравствуйте! Хочу записаться на бесплатный осмотр автомобиля"
             href="https://wa.me/77001234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8F"
             >Записаться на осмотр</a
@@ -49,41 +58,41 @@
 
       <section class="section" id="services" aria-labelledby="services-title">
         <div class="section__head">
-          <p class="eyebrow">Прайс</p>
-          <h2 id="services-title">Наши услуги</h2>
+          <p class="eyebrow" data-i18n="services.kicker">Прайс</p>
+          <h2 id="services-title" data-i18n="services.title">Наши услуги</h2>
         </div>
         <div class="cards">
           <article class="card">
-            <h3>Трехфазная мойка</h3>
-            <p>Бережная очистка кузова</p>
-            <p class="price">от 2 000 ₸</p>
-            <a class="btn btn--choice" data-service="Трехфазная мойка" data-price="от 2 000 ₸" href="#">Выбрать</a>
+            <h3 data-i18n="service.wash.name">Трехфазная мойка</h3>
+            <p data-i18n="service.wash.desc">Бережная очистка кузова</p>
+            <p class="price" data-i18n="service.wash.price">от 2 000 ₸</p>
+            <a class="btn btn--choice" data-i18n="choose" data-service-key="wash" data-service="Трехфазная мойка" data-price="от 2 000 ₸" href="#">Выбрать</a>
           </article>
           <article class="card">
-            <h3>Химчистка салона</h3>
-            <p>Удаление любых пятен и запахов</p>
-            <p class="price">от 35 000 ₸</p>
-            <a class="btn btn--choice" data-service="Химчистка салона" data-price="от 35 000 ₸" href="#">Выбрать</a>
+            <h3 data-i18n="service.interior.name">Химчистка салона</h3>
+            <p data-i18n="service.interior.desc">Удаление любых пятен и запахов</p>
+            <p class="price" data-i18n="service.interior.price">от 35 000 ₸</p>
+            <a class="btn btn--choice" data-i18n="choose" data-service-key="interior" data-service="Химчистка салона" data-price="от 35 000 ₸" href="#">Выбрать</a>
           </article>
           <article class="card">
-            <h3>Полировка кузова</h3>
-            <p>Устранение царапин и голограмм</p>
-            <p class="price">от 60 000 ₸</p>
-            <a class="btn btn--choice" data-service="Полировка кузова" data-price="от 60 000 ₸" href="#">Выбрать</a>
+            <h3 data-i18n="service.polish.name">Полировка кузова</h3>
+            <p data-i18n="service.polish.desc">Устранение царапин и голограмм</p>
+            <p class="price" data-i18n="service.polish.price">от 60 000 ₸</p>
+            <a class="btn btn--choice" data-i18n="choose" data-service-key="polish" data-service="Полировка кузова" data-price="от 60 000 ₸" href="#">Выбрать</a>
           </article>
           <article class="card">
-            <h3>Керамическое покрытие</h3>
-            <p>Защита кузова на 2 года</p>
-            <p class="price">от 120 000 ₸</p>
-            <a class="btn btn--choice" data-service="Керамическое покрытие" data-price="от 120 000 ₸" href="#">Выбрать</a>
+            <h3 data-i18n="service.ceramic.name">Керамическое покрытие</h3>
+            <p data-i18n="service.ceramic.desc">Защита кузова на 2 года</p>
+            <p class="price" data-i18n="service.ceramic.price">от 120 000 ₸</p>
+            <a class="btn btn--choice" data-i18n="choose" data-service-key="ceramic" data-service="Керамическое покрытие" data-price="от 120 000 ₸" href="#">Выбрать</a>
           </article>
         </div>
       </section>
 
       <section class="section section--tight" id="why" aria-labelledby="why-title">
         <div class="section__head">
-          <p class="eyebrow">Студия</p>
-          <h2 id="why-title">Почему мы</h2>
+          <p class="eyebrow" data-i18n="why.kicker">Студия</p>
+          <h2 id="why-title" data-i18n="why.title">Почему мы</h2>
         </div>
         <ul class="perks">
           <li>
@@ -93,7 +102,7 @@
                 <path d="M8.2 14h7.6" />
               </svg>
             </span>
-            <p>Используем только немецкую и американскую автохимию.</p>
+            <p data-i18n="why.1">Используем только немецкую и американскую автохимию.</p>
           </li>
           <li>
             <span class="perk__icon" aria-hidden="true">
@@ -102,7 +111,7 @@
                 <path d="M6.2 19.2a5.8 5.8 0 0 1 11.6 0" />
               </svg>
             </span>
-            <p>Опыт мастеров от 5 лет.</p>
+            <p data-i18n="why.2">Опыт мастеров от 5 лет.</p>
           </li>
           <li>
             <span class="perk__icon" aria-hidden="true">
@@ -111,7 +120,7 @@
                 <circle cx="12" cy="13" r="2.6" />
               </svg>
             </span>
-            <p>Камеры в рабочей зоне (можете следить за своим авто онлайн).</p>
+            <p data-i18n="why.3">Камеры в рабочей зоне (можете следить за своим авто онлайн).</p>
           </li>
         </ul>
       </section>
@@ -121,15 +130,15 @@
       <p class="logo logo--footer">NeonShine</p>
       <ul class="footer__list">
         <li>
-          <span>Адрес</span>
-          <strong>г. Астана</strong>
+          <span data-i18n="address.label">Адрес</span>
+          <strong data-i18n="address.value">г. Астана</strong>
         </li>
         <li>
-          <span>Режим работы</span>
-          <strong>Ежедневно с 10:00 до 22:00</strong>
+          <span data-i18n="hours.label">Режим работы</span>
+          <strong data-i18n="hours.value">Ежедневно с 10:00 до 22:00</strong>
         </li>
         <li>
-          <span>Телефон</span>
+          <span data-i18n="phone.label">Телефон</span>
           <a data-tel href="tel:+77001234567">+7 700 123-45-67</a>
         </li>
       </ul>
@@ -146,37 +155,40 @@
     <dialog class="contacts" id="contacts" aria-labelledby="contacts-title">
       <div class="contacts__top">
         <div>
-          <p class="eyebrow">Связаться</p>
-          <h2 id="contacts-title">Контакты</h2>
+          <p class="eyebrow" data-i18n="contacts.kicker">Связаться</p>
+          <h2 id="contacts-title" data-i18n="contacts.title">Контакты</h2>
         </div>
-        <button class="contacts__close" type="button" aria-label="Закрыть">×</button>
+        <button class="contacts__close" type="button" data-i18n-aria="close" aria-label="Закрыть">×</button>
       </div>
       <ul class="contacts__list">
         <li>
-          <span>Телефон</span>
+          <span data-i18n="phone.label">Телефон</span>
           <a data-tel href="tel:+77001234567">+7 700 123-45-67</a>
         </li>
         <li>
-          <span>Адрес</span>
-          <strong>г. Астана</strong>
+          <span data-i18n="address.label">Адрес</span>
+          <strong data-i18n="address.value">г. Астана</strong>
         </li>
         <li>
-          <span>Режим работы</span>
-          <strong>Ежедневно с 10:00 до 22:00</strong>
+          <span data-i18n="hours.label">Режим работы</span>
+          <strong data-i18n="hours.value">Ежедневно с 10:00 до 22:00</strong>
         </li>
         <li>
           <span>Instagram</span>
-          <a data-instagram href="https://instagram.com/neonshine">Открыть профиль</a>
+          <a data-instagram data-i18n="instagram.open" href="https://instagram.com/neonshine">Открыть профиль</a>
         </li>
       </ul>
       <a
         class="btn btn--primary"
+        data-i18n="wa.button"
+        data-wa-key="wa.inspect"
         data-wa="Здравствуйте! Хочу записаться на бесплатный осмотр автомобиля"
         href="#"
         >Написать в WhatsApp</a
       >
     </dialog>
 
+    <script src="i18n.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

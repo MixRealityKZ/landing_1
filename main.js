@@ -11,23 +11,32 @@ document.querySelectorAll("[data-instagram]").forEach((link) => {
   link.href = instagram;
 });
 
-document.querySelectorAll("[data-wa]").forEach((link) => {
-  link.href = waLink(link.dataset.wa);
-});
+function refreshMessengerLinks() {
+  const english = document.documentElement.lang === "en";
 
-document.querySelectorAll("[data-service]").forEach((link) => {
-  const text = `Привет! Меня интересует ${link.dataset.service} за ${link.dataset.price}. Подскажите свободное время?`;
-  link.href = waLink(text);
-});
+  document.querySelectorAll("[data-wa]").forEach((link) => {
+    link.href = waLink(link.dataset.wa);
+  });
+
+  document.querySelectorAll("[data-service]").forEach((link) => {
+    const text = english
+      ? `Hi! I'm interested in ${link.dataset.service} for ${link.dataset.price}. What times are available?`
+      : `Привет! Меня интересует ${link.dataset.service} за ${link.dataset.price}. Подскажите свободное время?`;
+    link.href = waLink(text);
+  });
+
+  document.querySelectorAll('a[href^="https://wa.me/"], a[href^="https://instagram.com"]').forEach((link) => {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  });
+}
+
+refreshMessengerLinks();
+document.addEventListener("neonshine:lang", refreshMessengerLinks);
 
 function waLink(text) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 }
-
-document.querySelectorAll('a[href^="https://wa.me/"], a[href^="https://instagram.com"]').forEach((link) => {
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-});
 
 const contacts = document.querySelector(".contacts");
 const callButton = document.querySelector(".header__phone");
