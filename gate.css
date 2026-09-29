@@ -1,0 +1,141 @@
+:root {
+  --text: #f5f7fb;
+  --muted: #b7bdcb;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #7a6cff #11131a;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #07080c;
+}
+
+html::-webkit-scrollbar-thumb {
+  border: 2px solid #07080c;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #4cc3ff, #7a6cff);
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  color: var(--text);
+  font-family: Manrope, "Segoe UI", sans-serif;
+  background:
+    linear-gradient(180deg, rgba(7, 8, 12, 0.72), rgba(7, 8, 12, 0.88)),
+    url("assets/hero.png") center 40% / cover no-repeat,
+    #07080c;
+}
+
+.gate {
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.window {
+  width: min(520px, 100%);
+  padding: 28px 22px 22px;
+  background: rgba(10, 12, 18, 0.88);
+  border: 1px solid rgba(140, 160, 255, 0.28);
+  border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.brand {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4cc3ff, #7a6cff);
+  box-shadow: 0 0 10px #4cc3ff;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  margin-top: 14px;
+  font-size: clamp(28px, 7vw, 36px);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.lead {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.choices {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.choice {
+  display: grid;
+  gap: 4px;
+  min-height: 72px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #6d62ff 0%, #5b4dff 100%);
+  color: #fff;
+  text-decoration: none;
+}
+
+.choice--alt {
+  background: transparent;
+  border: 1px solid rgba(176, 140, 255, 0.7);
+}
+
+.choice--red {
+  background: linear-gradient(180deg, #ff3b3b 0%, #c8102e 100%);
+  border: 0;
+}
+
+.choice__name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.choice__note {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+}
+
+.choice:focus-visible {
+  outline: 2px solid #4cc3ff;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .choice:hover {
+    filter: brightness(1.08);
+  }
+}
